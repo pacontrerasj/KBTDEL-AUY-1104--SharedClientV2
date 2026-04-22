@@ -1,0 +1,5 @@
+on: [push]
+
+jobs:
+  test-job:
+    uses: pacontrerasj/AUY1104-SharedWorkflows/.github/workflows/holamundo.yaml@main
