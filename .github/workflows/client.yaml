@@ -2,4 +2,4 @@ on: [push]
 
 jobs:
   test-job:
-    uses: pacontrerasj/AUY1104-SharedWorkflowsV2/.github/workflows/holamundo.yaml@main
+    uses: pacontrerasj/KBTDEL-AUY1104-SharedWorkflowsV2/.github/workflows/holamundo.yaml@main
