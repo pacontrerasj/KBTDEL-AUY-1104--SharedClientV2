@@ -1,8 +1,15 @@
-on: [push]
+on:
+  push:
+    tags:
+      - 'v*.*.*'
 
 jobs:
   deploy:
     uses: pacontrerasj/KBTDEL-AUY-1104--SharedWorkflowsV2/.github/workflows/deploy-api.yaml@main
+
+    with:
+      image-name: my-api
+      image-tag: ${{ github.ref_name }}
 
     secrets:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
