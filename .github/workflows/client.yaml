@@ -1,5 +1,9 @@
 on: [push]
 
 jobs:
-  test-job:
-    uses: pacontrerasj/KBTDEL-AUY-1104--SharedWorkflowsV2/.github/workflows/holamundo.yaml@main
+  deploy:
+    uses: pacontrerasj/KBTDEL-AUY-1104--SharedWorkflowsV2/.github/workflows/deploy-api.yaml@main
+
+    secrets:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
