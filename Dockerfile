@@ -1,2 +1,2 @@
 FROM alpine:latest
-CMD ["echo", "Hola desde Docker"]
+CMD ["echo", "Hola desde Dockerv2"]
