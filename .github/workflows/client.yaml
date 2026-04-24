@@ -5,7 +5,8 @@ on:
 
 permissions:
   contents: read
-
+  id-token: write
+ 
 jobs:
   deploy:
     uses: pacontrerasj/KBTDEL-AUY-1104--SharedWorkflowsV2/.github/workflows/deploy-api.yaml@main
