@@ -15,8 +15,30 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Run tests
+        #Aqui se valida la existencia del archivo dockerfile
+      - name: Validate project structure
         run: |
-          echo "Running tests..."
-          echo "All tests passed"
+          echo "Validating project structure..."
+        
+          if [ ! -f Dockerfile ]; then
+            echo " Dockerfile not found"
+            exit 1
+          fi
+
+          echo " Dockerfile exists"
+        # Aqui se valida que se ejecuta el docker build
+      - name: Validate Docker build
+        run: |
+          echo "Testing Docker build..."
+
+          docker build -t test-image .
+
+          if [ $? -ne 0 ]; then
+            echo " Docker build failed"
+            exit 1
+          fi
+
+          echo " Docker build successful"
+
+      - name: Final result
+        run: echo "All tests passed successfully"
