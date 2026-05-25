@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: blackrosse/demo-api:latest
+          image: blackrosse/my-api:latest
           imagePullPolicy: Always
           ports:
             - name: http

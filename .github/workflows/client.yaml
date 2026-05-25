@@ -12,7 +12,7 @@ jobs:
     uses: katalinaino/shared-workflows/.github/workflows/deploy-api.yaml@main
 
     with:
-      image-name: my-api
+      image-name: demo-api
       image-tag: ${{ github.ref_name }}
       k3s-server-public-ip: ${{ vars.K3S_SERVER_PUBLIC_IP }}
 
