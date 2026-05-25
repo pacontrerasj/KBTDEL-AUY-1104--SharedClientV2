@@ -14,7 +14,7 @@ jobs:
     with:
       image-name: my-api
       image-tag: ${{ github.ref_name }}
-      environment: prod
+      k3s-server-public-ip: ${{ vars.K3S_SERVER_PUBLIC_IP }}
 
     secrets:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
