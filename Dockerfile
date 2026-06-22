@@ -1,4 +1,4 @@
-FROM node:non-existent-tag-9999
+FROM node:20-alpine
 
 WORKDIR /app
 
