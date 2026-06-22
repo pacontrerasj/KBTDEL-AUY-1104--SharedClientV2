@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   deploy:
-    uses: katalinaino/shared-workflows/.github/workflows/deploy-api.yaml@main
+    uses: pacontrerasj/KBTDEL-AUY-1104--SharedWorkflowsV2/.github/workflows/deploy-api.yaml@main
 
     with:
       image-name: demo-api
