@@ -1,7 +1,15 @@
+name: Deploy Canary — demo-api
+
 on:
   push:
     tags:
       - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      image-tag:
+        description: Tag de la imagen a desplegar (ej. v1.0.0)
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -13,8 +21,10 @@ jobs:
 
     with:
       image-name: demo-api
-      image-tag: ${{ github.ref_name }}
+      image-tag: ${{ github.event_name == 'workflow_dispatch' && inputs.image-tag || github.ref_name }}
       k3s-server-public-ip: ${{ vars.K3S_SERVER_PUBLIC_IP }}
+      k8s-namespace: ${{ vars.K8S_NAMESPACE || 'default' }}
+      env-vars: ${{ vars.API_ENV_VARS || '' }}
 
     secrets:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
